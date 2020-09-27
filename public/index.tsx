@@ -43,6 +43,11 @@ window.addEventListener("error", (evt: ErrorEvent) => {
     return;
   }
 
+  if (window.location.protocol === 'http:') {
+    window.location.protocol = 'https:'
+    return;
+  }
+
   fider = Fider.initialize();
 
   __webpack_nonce__ = fider.session.contextID;
